@@ -84,7 +84,7 @@ jobs:
       steps:
 
           - name: Checkout GH repo
-            uses: actions/ckeckout@master
+            uses: actions/checkout@master
             with:
               fetch-depth: 0
 
