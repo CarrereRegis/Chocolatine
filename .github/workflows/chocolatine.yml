@@ -49,7 +49,7 @@ jobs:
           - name: Check binary presence
             run: |
               if [! -f ./${{ env.EXECUTABLES }}]; then
-                  echo "::error file=./${{ EXECUTABLES }}, title=Binary
+                  echo "::error file=./${{ env.EXECUTABLES }}, title=Binary
                   Error::Binary not found"
                   exit 1
               fi
