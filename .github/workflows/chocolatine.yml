@@ -40,19 +40,20 @@ jobs:
         runs-on: ubuntu-latest
         steps:
 
-            - name: Checkout GH repo
-              uses: actions/checkout@master
+          - name: Checkout GH repo
+            uses: actions/checkout@master
 
-            - name: Compile reposiory
-              run: make
+          - name: Compile reposiory
+            run: make
 
-            - name: Check binary presence
-              run: |
-                if [! -f ./${{ EXECUTABLES }}]; then
-                    echo "::error file=./${{ EXECUTABLES }}, title=Binary Error::Binary not found"
-                    exit 1
-                fi
-                exit 0
+          - name: Check binary presence
+            run: |
+              if [! -f ./${{ EXECUTABLES }}]; then
+                  echo "::error file=./${{ EXECUTABLES }}, title=Binary
+                  Error::Binary not found"
+                  exit 1
+              fi
+              exit 0
 
     run-tests:
         runs-on: ubuntu-latest
